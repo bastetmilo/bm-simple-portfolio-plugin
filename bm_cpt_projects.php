@@ -159,8 +159,8 @@ class iworks_prefix_title
     }
     public function the_title($title, $post_ID)
     {
-
-        if (is_single($post_ID) && is_singular('bm_projects_cpt') ) {
+        global $post;
+        if ( in_the_loop() && 'bm_projects_cpt' === $post->post_type ) {
             return __('Project: ','bm_projects_cpt') . $title;
         }
         return $title;
