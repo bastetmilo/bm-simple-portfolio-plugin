@@ -213,7 +213,7 @@ class bm_add_contact_info
     }
     public function bm_project_info_update()
     {
-        update_option('bm_contact_text',   $_POST['bm_contact_text']);
+        update_option('bm_contact_text',   strip_tags( $_POST['bm_contact_text']) );
     }
     public function bm_projects_options_page() 
     {
@@ -251,4 +251,3 @@ function bm_cpt_deactivate() {
 register_deactivation_hook( __FILE__, 'bm_cpt_deactivate' );
 
  
-?>
